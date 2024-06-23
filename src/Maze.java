@@ -6,6 +6,7 @@ public class Maze {
     private Node start;
     private Node goal;
 
+//#Alterar qq coisa
 
     public Maze(String filename) throws IOException{
         this.filename = filename;
