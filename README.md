@@ -1,19 +1,14 @@
-## Getting Started
+# BFS e DFS em JAVA
+### Neste projeto, eu me desafio a implementar os algoritmos BFS e DFS em java.
+###### Os códigos deste projeto são uma implementação dos programas usados no curso CS50. Segue link da página do curso [CS50 A.I](https://cs50.harvard.edu/ai/2024/):
+___
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+#### O meu objetivo com este projeto é desenvolver minha intimidade com a linguagem java e python. Além disso, estou  aplicando meus conhecimentos em teoria de grafos e também, claro, fundamentos de inteligência articial.
 
-## Folder Structure
+# Algoritmos implementados até agora:
+* ##### **BFS:** O algoritmo de Busca em Largura, também conhecido como BFS (Breadth-First Search), é um método eficiente para explorar e encontrar um elemento específico em um grafo. Imagine um labirinto onde você deseja encontrar a saída. O BFS funciona como se você estivesse explorando o labirinto nível por nível, visitando todos os corredores adjacentes antes de passar para o próximo nível.
 
-The workspace contains two folders by default, where:
+* ##### **DFS:** O algoritmo de Busca em Profundidade (DFS, Depth-First Search) é outra técnica eficiente para explorar e encontrar elementos em um grafo. Imagine um labirinto onde você se aventura pelos corredores mais profundos antes de retornar para explorar outras áreas. O DFS funciona de forma similar:
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+> ### Infelizmente com o retorno da faculdade não terei muito tempo para mexer neste projeto. Porém estarei fazendo atualizações periódicamente.
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
-"# Tomaz CS50AI" 
