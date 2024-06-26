@@ -1,9 +1,11 @@
 import java.io.*;
-import java.util.List;
+import java.util.*;
 
 import javafx.util.*;
 
 public class Maze {
+    private int height;
+    private int width;
     private String filename;
     private boolean[][] walls;
     private Pair<Integer, Integer> start;
@@ -46,8 +48,8 @@ public class Maze {
         //Determine height and width of maze
         String[] content = linha.split("\n");
 
-        int height = content.length;
-        int width = content[0].length();
+        height = content.length;
+        width = content[0].length();
 
         //Keep track of walls
         for (int i = 0; i < height; i++) {
@@ -73,9 +75,32 @@ public class Maze {
             walls[i] = row;
         }
     }
+    
+    //Este método retorna os estados vizinhos de um outro estado determinado
+    public Map<String, Pair<Integer, Integer>> neighbors(Node state) {
+        int row = state.getState().getKey();
+        int col = state.getState().getValue();
 
-    public static void neighbors(Node state) {
-        
+        Map<String,Pair<Integer,Integer>> candidates = new HashMap();
+
+        candidates.put("up",new Pair<>(row-1,col));
+        candidates.put("down", new Pair<>(row+1,col));
+        candidates.put("left", new Pair<>(row,col-1));
+        candidates.put("right", new Pair<>(row+1,col+1));
+
+        Map<String,Pair<Integer,Integer>> results = new HashMap();
+
+        for (Map.Entry<String, Pair<Integer, Integer>> entry : candidates.entrySet()) {
+            String direction = entry.getKey();
+
+            int r = entry.getValue().getKey();
+            int c = entry.getValue().getValue();
+
+            if((r >= 0 && r <= height)&&(c >= 0 && c < width)&&(walls[r][c])){
+                results.put(direction, new Pair<>(r,c));
+            }
+        }
+        return results;
     }
 
     private boolean isOnSolutionPath(int row, int col) {
@@ -98,7 +123,7 @@ public class Maze {
                 if(walls[i][j]){
                     System.out.print("█");
                 }
-                else if (i == start.getValue() && j == start.getKey()) { // Access values from Pair
+                else if (i == start.getValue() && j == start.getKey()) {
                     System.out.print("A");
                 }else if (i == goal.getValue() && j == goal.getKey()) {
                     System.out.print("B");
